@@ -6,3 +6,5 @@ const userSchema = mongoose.Schema({
     email: String,
     age: Number,
 })
+
+const UserModel = mongoose.model("user", userSchema)
