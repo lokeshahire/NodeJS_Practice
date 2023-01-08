@@ -4,5 +4,5 @@ const connection = mongoose.connect("mongodb+srv://lokesh:ahire@cluster0.entjnlc
 
 
 module.exports = {
-
+    connection
 }
