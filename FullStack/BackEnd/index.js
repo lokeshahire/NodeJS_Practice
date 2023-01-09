@@ -21,6 +21,11 @@ app.use(authenticate)
 app.use("/notes", noteRouter)
 
 app.listen(8080, async () => {
+    try {
 
+
+    } catch (e) {
+        console.log(e.message)
+    }
     console.log("listening on port 8080");
 });
