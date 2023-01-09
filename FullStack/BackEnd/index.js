@@ -19,3 +19,8 @@ app.get("/", (req, res) => {
 app.use("/users", userRouter)
 app.use(authenticate)
 app.use("/notes", noteRouter)
+
+app.listen(8080, async () => {
+
+    console.log("listening on port 8080");
+});
