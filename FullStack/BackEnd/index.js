@@ -17,3 +17,4 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users", userRouter)
+app.use(authenticate)
