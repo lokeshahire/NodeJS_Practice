@@ -23,7 +23,7 @@ app.use("/notes", noteRouter)
 app.listen(8080, async () => {
     try {
         await connection
-        console.log("Connected to db")
+        console.log("Connected to dbAtlas")
 
     } catch (e) {
         console.log(e.message)
