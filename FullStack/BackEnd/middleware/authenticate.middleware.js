@@ -9,6 +9,9 @@ const authenticate = (req, res, next) => {
             if (decoded) {
                 // console.log(decoded)
                 req.body.user = decoded.userID
+
+                next()
+
             }
             else {
                 res.send({ msg: "Please Login" })
