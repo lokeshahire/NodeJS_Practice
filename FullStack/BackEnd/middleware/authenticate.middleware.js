@@ -8,7 +8,7 @@ const authenticate = (req, res, next) => {
         jwt.verify(token, "masai", (err, decoded) => {
             if (decoded) {
                 // console.log(decoded)
-
+                req.body.user = decoded.userID
             }
             else {
                 res.send({ msg: "Please Login" })
