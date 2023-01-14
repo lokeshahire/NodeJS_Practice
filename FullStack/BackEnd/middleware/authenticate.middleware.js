@@ -6,6 +6,9 @@ const authenticate = (req, res, next) => {
 
     if (token) {
 
+    }
+    else {
+        res.send({ msg: "Please Login" })
 
     }
 
