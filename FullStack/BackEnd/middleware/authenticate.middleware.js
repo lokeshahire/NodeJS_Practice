@@ -9,6 +9,9 @@ const authenticate = (req, res, next) => {
             if (decoded) {
 
             }
+            else {
+                res.send({ msg: "Please Login" })
+            }
         })
     }
     else {
