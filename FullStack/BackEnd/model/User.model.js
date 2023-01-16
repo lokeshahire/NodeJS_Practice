@@ -6,3 +6,5 @@ const userSchema = mongoose.Schema({
     password: String
 })
 
+const UserModel = mongoose.model("user", userSchema)
+
