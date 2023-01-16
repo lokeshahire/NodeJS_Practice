@@ -5,3 +5,7 @@ const noteSchema = mongoose.Schema({
     body: String,
     user: String
 })
+
+
+const NoteModel = mongoose.model("note", noteSchema)
+
