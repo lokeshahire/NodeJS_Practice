@@ -29,7 +29,12 @@ userRouter.post("/login", async (req, res) => {
 
     const { email, password } = req.body;
 
+    try {
 
+    } catch (e) {
+        res.send({ msg: "user registration failed", "error": e.message });
+
+    }
 });
 
 
