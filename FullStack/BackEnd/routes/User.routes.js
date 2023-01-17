@@ -33,7 +33,10 @@ userRouter.post("/login", async (req, res) => {
         const user = await UserModel.find({ email })
         if (user.length > 0) {
             bcrypt.compare(password, user[0].password, (err, result) => {
+                // result == true
+                if (result) {
 
+                }
             });
 
 
