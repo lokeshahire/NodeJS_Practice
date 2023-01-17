@@ -36,7 +36,7 @@ userRouter.post("/login", async (req, res) => {
                 // result == true
                 if (result) {
                     let token = jwt.sign({ userID: user[0]._id }, "masai")
-
+                    res.send({ msg: "Login Succsess", "token": token });
                 }
                 else {
                     res.send({ msg: "user registration failed" });
