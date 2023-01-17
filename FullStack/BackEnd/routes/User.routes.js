@@ -37,6 +37,10 @@ userRouter.post("/login", async (req, res) => {
                 if (result) {
 
                 }
+                else {
+                    res.send({ msg: "user registration failed" });
+
+                }
             });
 
 
