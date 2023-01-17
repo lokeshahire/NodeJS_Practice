@@ -30,7 +30,10 @@ userRouter.post("/login", async (req, res) => {
     const { email, password } = req.body;
 
     try {
-
+       
+        else {
+            res.send({ msg: "wrong Credentials" })
+        }
     } catch (e) {
         res.send({ msg: "user registration failed", "error": e.message });
 
