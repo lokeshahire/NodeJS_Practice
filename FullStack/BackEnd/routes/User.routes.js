@@ -5,10 +5,11 @@ const userRouter = express.Router();
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt")
 
+userRouter.post("/register", async (req, res) => {
 
 
 
-module.exports = { userRouter }
+    module.exports = { userRouter }
 
 
 
