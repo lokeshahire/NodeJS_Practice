@@ -31,7 +31,10 @@ userRouter.post("/login", async (req, res) => {
 
     try {
         const user = await UserModel.find({ email })
-     
+        if (user.length > 0) {
+
+
+        }
         else {
             res.send({ msg: "wrong Credentials" })
         }
