@@ -35,6 +35,7 @@ userRouter.post("/login", async (req, res) => {
             bcrypt.compare(password, user[0].password, (err, result) => {
                 // result == true
                 if (result) {
+                    let token = jwt.sign({ userID: user[0]._id }, "masai")
 
                 }
                 else {
