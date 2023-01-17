@@ -12,11 +12,25 @@ userRouter.post("/register", async (req, res) => {
             if (err) {
                 res.send({ msg: "user registration failed", "error": err.message });
             }
+            else {
+                const user = new UserModel({ name, email, password: hash });
+                await user.save();
+                res.send({ msg: "user registration successful" });
+            }
+        });
+
+    } catch (e) {
+        res.send({ msg: "user registration failed", "error": e.message });
+    }
+});
 
 
 
 
-            module.exports = { userRouter }
+
+
+
+module.exports = { userRouter }
 
 
 
