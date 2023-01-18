@@ -41,7 +41,13 @@ noteRouter.delete("/delete/:id", async (req, res) => {
     const note = await NoteModel.findOne({ "_id": id });
     const userId_in_note = note.user
     const userId_in_req = req.body.user
+    try {
 
+
+    } catch (e) {
+        res.send("Something went wrong  ");
+
+    }
 })
 
 
