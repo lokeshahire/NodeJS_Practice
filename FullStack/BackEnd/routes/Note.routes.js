@@ -25,3 +25,14 @@ noteRouter.patch("/update/:id", async (req, res) => {
             await NoteModel.findByIdAndUpdate({ _id: id }, req.body)
             res.send("note updated successfully");
         }
+        else {
+            res.send("You are not Authorized ");
+
+        }
+
+    } catch (e) {
+        res.send("Something went wrong  ");
+
+    }
+})
+
