@@ -13,3 +13,9 @@ noteRouter.post("/create", async (req, res) => {
     await user.save();
     res.send({ msg: "Notes Created" });
 })
+
+noteRouter.patch("/update/:id", async (req, res) => {
+
+
+
+    module.exports = { noteRouter }
