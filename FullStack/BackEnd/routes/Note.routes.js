@@ -36,3 +36,8 @@ noteRouter.patch("/update/:id", async (req, res) => {
     }
 })
 
+
+
+
+
+module.exports = { noteRouter }
