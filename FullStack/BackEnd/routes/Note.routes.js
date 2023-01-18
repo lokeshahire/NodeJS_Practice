@@ -42,7 +42,10 @@ noteRouter.delete("/delete/:id", async (req, res) => {
     const userId_in_note = note.user
     const userId_in_req = req.body.user
     try {
+        if (userId_in_req == userId_in_note) {
 
+
+        }
 
     } catch (e) {
         res.send("Something went wrong  ");
