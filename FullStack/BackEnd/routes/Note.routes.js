@@ -7,3 +7,9 @@ noteRouter.get("/", async (req, res) => {
     const notes = await NoteModel.find()
     res.send(notes);
 })
+
+noteRouter.post("/create", async (req, res) => {
+    const user = new NoteModel(req.body);
+    await user.save();
+    res.send({ msg: "Notes Created" });
+})
