@@ -43,7 +43,7 @@ noteRouter.delete("/delete/:id", async (req, res) => {
     const userId_in_req = req.body.user
     try {
         if (userId_in_req == userId_in_note) {
-
+            await NoteModel.findByIdAndDelete({ _id: id })
         }
         else {
             res.send("You are not Authorized ");
