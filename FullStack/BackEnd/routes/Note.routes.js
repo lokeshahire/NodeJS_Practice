@@ -36,7 +36,9 @@ noteRouter.patch("/update/:id", async (req, res) => {
     }
 })
 
+noteRouter.delete("/delete/:id", async (req, res) => {
 
+})
 
 
 
