@@ -19,6 +19,9 @@ noteRouter.patch("/update/:id", async (req, res) => {
     const note = await NoteModel.findOne({ "_id": id });
     const userId_in_note = note.user
 
-
-
-    module.exports = { noteRouter }
+    const userId_in_req = req.body.user
+    try {
+        if (userId_in_req == userId_in_note) {
+            await NoteModel.findByIdAndUpdate({ _id: id }, req.body)
+            res.send("note updated successfully");
+        }
