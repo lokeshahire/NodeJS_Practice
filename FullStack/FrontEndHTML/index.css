@@ -9,3 +9,8 @@
 #container > input {
   margin: 10px;
 }
+#parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
