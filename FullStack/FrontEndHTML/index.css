@@ -5,3 +5,7 @@
   flex-direction: column;
   margin: auto;
 }
+
+#container > input {
+  margin: 10px;
+}
