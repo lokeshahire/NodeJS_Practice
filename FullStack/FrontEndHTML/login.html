@@ -30,6 +30,10 @@
       },
       body: JSON.stringify(payload),
     })
-     
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        localStorage.setItem("token", res.token);
+      })
   };
 </script>
