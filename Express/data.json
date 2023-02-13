@@ -1,0 +1,26 @@
+{
+    "student": [
+        {
+            "name": "one",
+            "city": "nashik"
+        },
+        {
+            "name": "two",
+            "city": "satana"
+        },
+        {
+            "name": "Lokesh",
+            "city": "Delhi"
+        }
+    ],
+    "teacher": [
+        {
+            "name": "abc",
+            "sub": "math"
+        },
+        {
+            "name": "xyz",
+            "sub": "phy"
+        }
+    ]
+}
