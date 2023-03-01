@@ -9,3 +9,42 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.send("HOME PAGE");
 });
+
+app.post("/register", async (req, res) => {
+    try {
+        const user = new UserModel(req.body);
+        await user.save();
+        res.send({ msg: "user registration successful" });
+    } catch (e) {
+        res.send({ msg: "user registration failed", "error": e.message });
+    }
+});
+
+
+app.post("/login", async (req, res) => {
+
+    const { email, pass } = req.body;
+    const token = jwt.sign({ course: 'backend' }, 'masai');
+    // const token = jwt.sign({ email: email, pass: pass }, 'SECRET123', {
+    //     expiresIn: "7 hours"
+    // });
+
+    try {
+
+        // const user = UserModel.find({ email: email, pass: pass });  
+        const user = await UserModel.find({ email, pass });    // if both email and pass name same then we can use only on name as per es6
+        if (user.length > 0) {
+
+            res.send({ msg: "user Login successful", "token": token });
+        }
+        else {
+            res.send({ msg: "user Authentication failed" });
+
+        }
+    }
+    catch (e) {
+        res.send({ msg: "user login failed", "error": e.message });
+
+    }
+});
+
