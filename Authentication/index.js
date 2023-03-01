@@ -102,6 +102,11 @@ app.get("/about", (req, res) => {
 
 app.listen(8080, async () => {
 
+    try {
+
+    } catch (e) {
+        console.log(e);
+    }
 
     console.log("listening 8080");
 });
