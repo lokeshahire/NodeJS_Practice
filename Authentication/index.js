@@ -86,4 +86,13 @@ app.get("/cart", (req, res) => {
     //     res.send(" Please Login first");
     //}
 
+    jwt.verify(token, 'masai', (err, decoded) => {
+        if (decoded) {
+            res.send("CART PAGE");
+        }
+        else {
+            res.send({ "err": err.message });
+
+        }
+    });
 });
