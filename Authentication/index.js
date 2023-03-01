@@ -99,3 +99,9 @@ app.get("/cart", (req, res) => {
 app.get("/about", (req, res) => {
     res.send("ABOUT PAGE");
 });
+
+app.listen(8080, async () => {
+
+
+    console.log("listening 8080");
+});
