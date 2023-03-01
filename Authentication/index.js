@@ -103,7 +103,8 @@ app.get("/about", (req, res) => {
 app.listen(8080, async () => {
 
     try {
-
+        await connection;
+        console.log("connected to db");
     } catch (e) {
         console.log(e);
     }
