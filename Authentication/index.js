@@ -74,3 +74,16 @@ app.get("/data", (req, res) => {
 
 });
 
+app.get("/cart", (req, res) => {
+
+    const token = req.headers.authorization
+
+    // if (token == "abc123") {
+    //     res.send("CART PAGE");
+
+    // }
+    // else {
+    //     res.send(" Please Login first");
+    //}
+
+});
