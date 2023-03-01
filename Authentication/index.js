@@ -48,3 +48,29 @@ app.post("/login", async (req, res) => {
     }
 });
 
+app.get("/data", (req, res) => {
+
+    const token = req.headers.authorization
+
+    // if (token == "abc123") {
+    //     res.send("DATA PAGE");
+
+    // }
+    // else {
+    //     res.send(" Please Login first");
+
+    // }
+
+
+    jwt.verify(token, 'masai', (err, decoded) => {
+        if (decoded) {
+            res.send("DATA PAGE");
+        }
+        else {
+            res.send({ "err": err.message });
+        }
+
+    });
+
+});
+
