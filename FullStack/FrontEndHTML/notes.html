@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Notes Page</h1>
+
+    <div id="parent"></div>
+  </body>
+</html>
+
+<script>
+  const getData = () => {
+    fetch("http://localhost:8080/notes/", {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        displayData(res);
+      })
+      .catch((err) => console.log(err));
+  };
+  getData();
+
+  const displayData = (res) => {
+    res.map((e) => {
+      let parent = document.getElementById("parent");
+      let div = document.createElement("div");
+      div.setAttribute("class", "box");
+
+      let title = document.createElement("h3");
+      title.innerHTML = e.title;
+      let body = document.createElement("p");
+      body.innerHTML = e.body;
+      let btn = document.createElement("button");
+      btn.innerText = "DELETE";
+      btn.addEventListener(
+        "click",
+        (delFun = (res) => {
+          fetch(`http://localhost:8080/notes/delete/${res.id}`, {
+            method: "DELETE",
+            headers: {
+              Authorization: localStorage.getItem("token"),
+            },
+          })
+            .then((res) => res.json())
+            .then((res) => {
+              // console.log(res);
+              displayData(res);
+            })
+            .catch((err) => console.log(err));
+        })
+      );
+      div.append(title, body, btn);
+      parent.append(div);
+    });
+  };
+  //   const delFun = () => {
+  //     fetch(`http://localhost:8080/notes/delete/${res._id}`, {
+  //       method: "DELETE",
+  //       headers: {
+  //         Authorization: localStorage.getItem("token"),
+  //       },
+  //     })
+  //       .then((res) => res.json())
+  //       .then((res) => {
+  //         // console.log(res);
+  //         displayData(res);
+  //       })
+  //       .catch((err) => console.log(err));
+  //   };
+</script>
